@@ -1,20 +1,24 @@
 package androids.erikat.pruebamancala
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import androids.erikat.pruebamancala.databinding.MancalaVariosJugadoresBinding
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MancalaVariosJugadoresActivity : AppCompatActivity() {
+    lateinit var mibinding: MancalaVariosJugadoresBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.mancala_varios_jugadores)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        iniciarComponentes()
+    }
+
+    fun iniciarComponentes() {
+        mibinding= MancalaVariosJugadoresBinding.inflate(layoutInflater)
+        setContentView(mibinding.root)
+
+        // Recibo los nombres de los jugadores creados/seleccionados en la pantalla anterior.
+        val jugador1 = intent.getBundleExtra("jugador1")
+        val jugador2 = intent.getBundleExtra("jugador2")
+
+        // falta la funcionalidad de varias personas
     }
 }
