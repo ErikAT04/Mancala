@@ -1,18 +1,13 @@
 package androids.erikat.pruebamancala
 
-import android.app.Dialog
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
-import androids.erikat.pruebamancala.databinding.ActivityMainBinding
-import androidx.activity.enableEdgeToEdge
+import androids.erikat.pruebamancala.databinding.ActivityOnePlayerGameBinding
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-    lateinit var mibinding: ActivityMainBinding
+class OnePlayerGameView : AppCompatActivity() {
+    lateinit var mibinding: ActivityOnePlayerGameBinding
     lateinit var listabotones: List<Button>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun iniciarComponentes() {
-        mibinding = ActivityMainBinding.inflate(layoutInflater)
+        mibinding = ActivityOnePlayerGameBinding.inflate(layoutInflater)
 
         setContentView(mibinding.root)
 
