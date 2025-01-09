@@ -18,6 +18,8 @@ class CrearJugadoresActivity : AppCompatActivity() {
         mibinding = CrearJugadoresBinding.inflate(layoutInflater)
         setContentView(mibinding.root)
         val btnJugar = mibinding.btnJugar
+        val btnVolver = mibinding.imageBtnBack
+
         btnJugar.setOnClickListener {
             var nombreJ1 = mibinding.etNombreJ1.text.toString()
             var nombreJ2 = mibinding.etNombreJ2.text.toString()
@@ -31,23 +33,23 @@ class CrearJugadoresActivity : AppCompatActivity() {
                 intent.putExtra("jugador1", nombreJ1)
                 intent.putExtra("jugador2", nombreJ2)
                 startActivity(intent)
-            }else{
+            } else {
 
                 // En caso negativo, saco un mensaje en función de que campo no este rellenado.
-                if(nombreJ1.isEmpty() && nombreJ2.isNotEmpty()){
+                if (nombreJ1.isEmpty() && nombreJ2.isNotEmpty()) {
                     Toast.makeText(
                         this,
                         "El campo del nombre del jugador 1 no esta rellenado.",
                         Toast.LENGTH_SHORT
                     ).show()
-                }else{
-                    if(nombreJ2.isEmpty() && nombreJ1.isNotEmpty()) {
+                } else {
+                    if (nombreJ2.isEmpty() && nombreJ1.isNotEmpty()) {
                         Toast.makeText(
                             this,
                             "El campo del nombre del jugador 2 no esta rellenado.",
                             Toast.LENGTH_SHORT
                         ).show()
-                    }else{
+                    } else {
                         Toast.makeText(
                             this,
                             "Ninguno de los campos esta rellenado",
@@ -56,6 +58,10 @@ class CrearJugadoresActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        btnVolver.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

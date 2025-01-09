@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MANCALA"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".1" />
+
     <Button
         android:id="@+id/btnSolitario"
         android:layout_width="wrap_content"
@@ -26,17 +38,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSolitario" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSolitario"
+        app:layout_constraintVertical_bias=".15"/>
 
-    <TextView
-        android:id="@+id/tvTitulo"
+
+    <Button
+        android:id="@+id/btnNormas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MANCALA"
-        android:textSize="20dp"
+        android:text="Normas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".1"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn2Jugadores" />
 </androidx.constraintlayout.widget.ConstraintLayout>
