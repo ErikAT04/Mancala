@@ -15,22 +15,23 @@ class MainActivity : AppCompatActivity() {
     private fun iniciarComponentes() {
         mibinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mibinding.root)
-        val btnSolitario= mibinding.btnSolitario
-        val btnVariosJugadores= mibinding.btn2Jugadores
+        val btnSolitario = mibinding.btnSolitario
+        val btnVariosJugadores = mibinding.btn2Jugadores
+        val btnNormas = mibinding.btnNormas
 
-        // En función de que boton se pulse, nos enviará a la pantalla de juego en solitario
-        // o la pantalla de creación/selección de jugadores.
+        // En función de que boton se pulse, nos enviará a la pantalla de juego en solitario,
+        // la pantalla de creación/selección de jugadores y las normas.
         btnSolitario.setOnClickListener {
-            var intent= Intent(this, OnePlayerGameView::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MancalaSolitarioActivity::class.java))
         }
 
         btnVariosJugadores.setOnClickListener {
-            var intent= Intent(this, CrearJugadoresActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, CrearJugadoresActivity::class.java))
         }
 
-
+        btnNormas.setOnClickListener {
+            startActivity(Intent(this, NormasMancalaActivity::class.java))
+        }
 
 
     }
