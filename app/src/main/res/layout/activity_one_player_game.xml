@@ -5,38 +5,72 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnePlayerGameView">
+    tools:context=".MancalaSolitarioActivity">
 
     <Button
-        android:id="@+id/btnSolitario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jugar en Solitario"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
-        app:layout_constraintVertical_bias="0.2" />
+        android:id="@+id/semilla4"
+        android:layout_width="64dp"
+        android:layout_height="53dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla3"
+        app:layout_constraintEnd_toStartOf="@+id/rumaBt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla3"
+        app:layout_constraintTop_toTopOf="@+id/semilla3" />
 
     <Button
-        android:id="@+id/btn2Jugadores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jugar con 2 Jugadores"
+        android:id="@+id/semilla1"
+        android:layout_width="64dp"
+        android:layout_height="53dp"
+        android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/semilla2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSolitario" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/semilla2"
+        android:layout_width="64dp"
+        android:layout_height="53dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla1"
+        app:layout_constraintEnd_toStartOf="@+id/semilla3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla1"
+        app:layout_constraintTop_toTopOf="@+id/semilla1" />
+
+    <Button
+        android:id="@+id/semilla3"
+        android:layout_width="64dp"
+        android:layout_height="53dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla2"
+        app:layout_constraintEnd_toStartOf="@+id/semilla4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla2"
+        app:layout_constraintTop_toTopOf="@+id/semilla2" />
+
+    <Button
+        android:id="@+id/rumaBt"
+        android:layout_width="91dp"
+        android:layout_height="53dp"
+        android:clickable="false"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla4"
+        app:layout_constraintTop_toTopOf="@+id/semilla4" />
 
     <TextView
-        android:id="@+id/tvTitulo"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MANCALA"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Función básica del Mancala: El movimiento de las bolas"
+        app:layout_constraintBottom_toTopOf="@+id/semilla3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".1"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -217,19 +217,10 @@ class TwoPlayerGameView : AppCompatActivity() {
                 viewBinding.rumap2
             )
         )
-        p1 = intent.getStringExtra("j1") ?: "Jugador 1"
-        p2 = intent.getStringExtra("j2") ?: "Jugador 2"
+        p1 = intent.getStringExtra("jugador1") ?: "Jugador 1"
+        p2 = intent.getStringExtra("jugador2") ?: "Jugador 2"
 
         viewBinding.p1Name.text = p1
         viewBinding.p2Name.text = p2
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("Resume", "Resumido")
-    }
-    override fun onPause() {
-        super.onPause()
-        Log.d("Pause", "Pausado")
     }
 }
