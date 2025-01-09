@@ -19,14 +19,6 @@
         <activity
             android:name=".CrearJugadoresActivity"
             android:exported="false" />
-
-        <activity
-            android:name=".MancalaVariosJugadoresActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".MancalaSolitarioActivity"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -43,10 +35,6 @@
             android:exported="false"/>
         <activity
             android:name=".OnePlayerGameView"
-            android:screenOrientation="portrait"
-            android:exported="false"/>
-        <activity
-            android:name=".CrearJugadoresActivity"
             android:screenOrientation="portrait"
             android:exported="false"/>
     </application>

@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         // En función de que boton se pulse, nos enviará a la pantalla de juego en solitario,
         // la pantalla de creación/selección de jugadores y las normas.
         btnSolitario.setOnClickListener {
-            startActivity(Intent(this, MancalaSolitarioActivity::class.java))
+            startActivity(Intent(this, OnePlayerGameView::class.java))
         }
 
         btnVariosJugadores.setOnClickListener {
