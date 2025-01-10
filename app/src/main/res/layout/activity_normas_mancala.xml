@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NormasMancalaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/imageBtnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tvNormas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Normas:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias=".05" />
+
+    <TextView
+        android:id="@+id/ObjetivoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="-Objetivo del juego:"
+        app:layout_constraintTop_toBottomOf="@+id/tvNormas"
+        tools:layout_editor_absoluteX="41dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Modo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="-Modo de juego:"
+        app:layout_constraintTop_toBottomOf="@+id/Descripcion2"
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Objetivo1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Un jugador:"
+        app:layout_constraintTop_toBottomOf="@+id/ObjetivoText"
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Modo1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Un jugador:"
+        app:layout_constraintTop_toBottomOf="@+id/Modo"
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Objetivo2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Dos jugadores:"
+        app:layout_constraintTop_toBottomOf="@+id/Descripcion1"
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Descripcion2"
+        android:layout_width="312dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="8dp"
+        android:text="Al mankala también se puede jugar entre dos personas de forma competitiva, para ello ambos jugadores intentarán acummular el mayor numero de puntos antes de que este acabe."
+        app:layout_constraintTop_toBottomOf="@+id/Objetivo2Text"
+        tools:layout_editor_absoluteX="48dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Descripcion3"
+        android:layout_width="316dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:text="El juego consta de 5 botones o &quot;cuencos&quot;, al pulsar uno de ellos las fichas se irán distribullendo una a una en los cuencos adyacentes hacia la derecha incluido el &quot;mankala&quot;."
+        app:layout_constraintTop_toBottomOf="@+id/Modo1Text"
+        tools:layout_editor_absoluteX="48dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Descripcion4"
+        android:layout_width="316dp"
+        android:layout_height="70dp"
+        android:text="Las piedras acumuladas en el mankala quedarán allí sin posivilidad de ser mobidas de ninguna forma, convirtiendose de este modo en los puntos conseguidos."
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="536dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Descripcion5"
+        android:layout_width="316dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="8dp"
+        android:text="Si la última piedra cae en un cuenco vacio en ese momento el juego se terminará, de otro modo, si el cuenco en el que cae la última piedra ya contaba con una o mas antes este se convertirá ahora en el único cuenco utilizable."
+        app:layout_constraintTop_toBottomOf="@+id/Descripcion4"
+        tools:layout_editor_absoluteX="48dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Descripcion1"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="En el mankala se puede jugar en modo solitario, para ello el jugador deberá intentar llevar todas las fichas o &quot;piedras&quot; a su propia base o &quot;Mankala&quot;."
+        app:layout_constraintTop_toBottomOf="@+id/Objetivo1Text"
+        tools:layout_editor_absoluteX="46dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

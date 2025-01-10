@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TwoPlayerGameView">
+
+    <Button
+        android:id="@+id/rumap2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:enabled="false"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla4p2"
+        app:layout_constraintEnd_toStartOf="@+id/semilla4p2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/semilla4p2" />
+
+    <Button
+        android:id="@+id/semilla1p2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla2p2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla2p2"
+        app:layout_constraintTop_toTopOf="@+id/semilla2p2" />
+
+    <Button
+        android:id="@+id/semilla3p2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/semilla2p2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla4p2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/semilla2p2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla3p2"
+        app:layout_constraintEnd_toStartOf="@+id/semilla1p2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla3p2"
+        app:layout_constraintTop_toTopOf="@+id/semilla3p2" />
+
+    <Button
+        android:id="@+id/semilla4p2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla3p2"
+        app:layout_constraintEnd_toStartOf="@+id/semilla3p2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rumap2"
+        app:layout_constraintTop_toTopOf="@+id/semilla3p2" />
+
+    <Button
+        android:id="@+id/semilla1p1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla2p1"
+        app:layout_constraintEnd_toStartOf="@+id/semilla2p1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/semilla2p1" />
+
+    <Button
+        android:id="@+id/semilla3p1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/semilla4p1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla2p1"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/semilla2p1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla3p1"
+        app:layout_constraintEnd_toStartOf="@+id/semilla3p1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla1p1"
+        app:layout_constraintTop_toTopOf="@+id/semilla3p1" />
+
+    <Button
+        android:id="@+id/semilla4p1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla3p1"
+        app:layout_constraintEnd_toStartOf="@+id/rumap1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla3p1"
+        app:layout_constraintTop_toTopOf="@+id/semilla3p1" />
+
+    <Button
+        android:id="@+id/rumap1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:enabled="false"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/semilla4p1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semilla4p1"
+        app:layout_constraintTop_toTopOf="@+id/semilla4p1" />
+
+    <TextView
+        android:id="@+id/p2Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de J2"
+        app:layout_constraintBottom_toTopOf="@+id/semilla3p2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/p1Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de J1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/semilla3p1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/turnoTView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turno de"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
