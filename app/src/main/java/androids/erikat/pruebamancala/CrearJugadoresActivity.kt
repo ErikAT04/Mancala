@@ -27,7 +27,7 @@ class CrearJugadoresActivity : AppCompatActivity() {
 
                 // En caso positivo, crear el intent para la ventana de juego con varios jugadores
                 // y paso en dos extras cada uno de los nombres.
-                var intent = Intent(this, MancalaVariosJugadoresActivity::class.java)
+                var intent = Intent(this, TwoPlayerGameView::class.java)
                 intent.putExtra("jugador1", nombreJ1)
                 intent.putExtra("jugador2", nombreJ2)
                 startActivity(intent)
