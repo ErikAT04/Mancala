@@ -31,11 +31,11 @@
             android:exported="true" />
 
         <activity
-            android:name=".MancalaSolitarioActivity"
+            android:name=".OnePlayerGameView"
             android:exported="true" />
 
         <activity
-            android:name=".MancalaVariosJugadoresActivity"
+            android:name=".TwoPlayerGameView"
             android:exported="true" />
 
     </application>
