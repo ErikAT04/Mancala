@@ -1,8 +1,8 @@
-package androids.erikat.pruebamancala
+package dam.erikangeljaime.juegomancala
 
 import android.content.Intent
 import android.os.Bundle
-import androids.erikat.pruebamancala.databinding.ActivityMainBinding
+import dam.erikangeljaime.juegomancala.databinding.ActivityMainBinding
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {

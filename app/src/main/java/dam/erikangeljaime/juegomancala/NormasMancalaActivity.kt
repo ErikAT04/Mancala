@@ -1,8 +1,8 @@
-package androids.erikat.pruebamancala
+package dam.erikangeljaime.juegomancala
 
 import android.content.Intent
 import android.os.Bundle
-import androids.erikat.pruebamancala.databinding.ActivityNormasMancalaBinding
+import dam.erikangeljaime.juegomancala.databinding.ActivityNormasMancalaBinding
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "androids.erikat.pruebamancala"
+    namespace = "dam.erikangeljaime.juegomancala"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "androids.erikat.pruebamancala"
+        applicationId = "dam.erikangeljaime.juegomancala"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -1,12 +1,10 @@
-package androids.erikat.pruebamancala
+package dam.erikangeljaime.juegomancala
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import androids.erikat.pruebamancala.databinding.ActivityTwoPlayerGameBinding
+import dam.erikangeljaime.juegomancala.databinding.ActivityTwoPlayerGameBinding
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 

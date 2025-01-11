@@ -1,10 +1,10 @@
-package androids.erikat.pruebamancala
+package dam.erikangeljaime.juegomancala
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import androids.erikat.pruebamancala.databinding.ActivityOnePlayerGameBinding
+import dam.erikangeljaime.juegomancala.databinding.ActivityOnePlayerGameBinding
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 

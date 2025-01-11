@@ -1,9 +1,9 @@
-package androids.erikat.pruebamancala
+package dam.erikangeljaime.juegomancala
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androids.erikat.pruebamancala.databinding.CrearJugadoresBinding
+import dam.erikangeljaime.juegomancala.databinding.CrearJugadoresBinding
 import androidx.appcompat.app.AppCompatActivity
 
 class CrearJugadoresActivity : AppCompatActivity() {

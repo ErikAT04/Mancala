@@ -1,4 +1,4 @@
-package androids.erikat.pruebamancala
+package dam.erikangeljaime.juegomancala
 
 import org.junit.Test
 
