@@ -21,6 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CrearJugadoresActivity"
+            android:exported="false"/>
+        <activity android:name=".NormasMancalaActivity"
+            android:exported="false"/>
+        <activity android:name=".OnePlayerGameView"
+            android:exported="false"/>
+        <activity android:name=".TwoPlayerGameView"
+            android:exported="false"/>
     </application>
 
 </manifest>

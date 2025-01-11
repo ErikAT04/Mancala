@@ -126,9 +126,10 @@ class OnePlayerGameView : AppCompatActivity() {
                 dialog.dismiss()
             }
             .setNegativeButton("Enviar a un amigo") { dialog, _ ->
-                val mensajeVictoria = "No consigo ganar en este juego!! Se llama Mancala y lo puedes probar si quieres gritar"
+                val mensajeVictoria = "No consigo ganar en este juego!! Se llama Mancala y lo puedes probar a través de este enlace: https://github.com/ErikAT04/Mancala/releases"
                 enviarMensajeTexto(mensajeVictoria)
                 dialog.dismiss()
+                mostrarDialogoPerdida()
             }
 
         val dialog = builder.create()
@@ -147,9 +148,10 @@ class OnePlayerGameView : AppCompatActivity() {
                 dialog.dismiss()
             }
             .setNegativeButton("Enviar a un amigo") { dialog, _ ->
-                val mensajeVictoria = "He conseguido ganar al Mancala!! Ahora prueba tú (no lo hagas)"
+                val mensajeVictoria = "He conseguido ganar al Mancala!! Ahora prueba tú: https://github.com/ErikAT04/Mancala/releases"
                 enviarMensajeTexto(mensajeVictoria)
                 dialog.dismiss()
+                mostrarDialogoVictoria()
             }
 
         val dialog = builder.create()

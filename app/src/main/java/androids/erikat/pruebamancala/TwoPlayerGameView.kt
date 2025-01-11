@@ -57,7 +57,6 @@ class TwoPlayerGameView : AppCompatActivity() {
      *
      * Si el último botón modificado está en la lista del jugador y solo tiene 1 semilla (Estaba vacía):
      *  - Si la posición opuesta (sin contar las rumas) del otro jugador tiene semillas, el actual se queda con sus semillas
-     *  - Si la posición opuesta del otro jugador no tiene semillas, se acaba el juego
      *
      * Si el último botón modificado está en la otra lista, se cambia de jugador
      *
@@ -79,10 +78,8 @@ class TwoPlayerGameView : AppCompatActivity() {
                     .toInt())
                 listaBotones[jugadorActual][4].text = "$suma"
                 listaBotones[(jugadorActual + 1) % 2][3 - posSubLista].text = "0"
-                activarBotones()
-            } else {
-                terminarJuego()
             }
+            activarBotones()
         } else if (posLista != jugadorActual) {
             cambiarJugador()
         } else {
@@ -239,9 +236,10 @@ class TwoPlayerGameView : AppCompatActivity() {
                 dialog.dismiss()
             }
             .setNegativeButton("Enviar a un amigo") { dialog, _ ->
-                val mensajeVictoria = "$jugadorgana ha ganado a $jugadorpierde al Mancala. ¿Quieres retar a tus amigos? (Mejor enganchate al LoL)"
+                val mensajeVictoria = "$jugadorgana ha ganado a $jugadorpierde al Mancala. ¿Quieres retar a tus amigos? https://github.com/ErikAT04/Mancala/releases"
                 enviarMensajeTexto(mensajeVictoria)
                 dialog.dismiss()
+                mostrarDialogoVictoria(jugadorgana, jugadorpierde)
             }
 
         val dialog = builder.create()
@@ -261,9 +259,10 @@ class TwoPlayerGameView : AppCompatActivity() {
                 dialog.dismiss()
             }
             .setNegativeButton("Enviar a un amigo") { dialog, _ ->
-                val mensajeVictoria = "¡¡$jugadorgana y $jugadorpierde han intentado competir al Mancala y han empatado!! ¿Crees que puedes ganar a tus amigos? (coña, no tienes amigos)"
+                val mensajeVictoria = "¡¡$jugadorgana y $jugadorpierde han intentado competir al Mancala y han empatado!! ¿Crees que puedes ganar a tus amigos? https://github.com/ErikAT04/Mancala/releases"
                 enviarMensajeTexto(mensajeVictoria)
                 dialog.dismiss()
+                mostrarDialogoEmpate(jugadorgana, jugadorpierde)
             }
 
         val dialog = builder.create()

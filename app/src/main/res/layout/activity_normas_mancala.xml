@@ -1,46 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".NormasMancalaActivity">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:layout_height="76dp">
 
-    <ImageButton
-        android:id="@+id/imageBtnVolver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back_24"
-        app:layout_constraintHorizontal_bias=".02"
-        android:background="?attr/colorPrimary"
-        />
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
 
-    <TextView
-        android:id="@+id/tvNormas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Normas:"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias=".05" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar2"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
+
+            <ImageButton
+                android:id="@+id/imageBtnVolver"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.041"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4"
+                app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+            <TextView
+                android:id="@+id/tvNormas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Normas:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:visibility="visible"
+                app:layout_anchor="@+id/appbar"
+                app:layout_anchorGravity="center" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40px" />
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/ObjetivoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objetivo del juego:" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20px" />
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/Objetivo1Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Un jugador:" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="En el Mancala se puede jugar en modo solitario, para ello el jugador deberá intentar llevar todas las fichas o &quot;piedras&quot; a su propia base o &quot;Ruma&quot;." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30px" />
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/Objetivo2Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dos jugadores:" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Al mancala también se puede jugar entre dos personas de forma competitiva, para ello ambos jugadores intentarán acumular el mayor numero de puntos antes de que la partida acabe." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40px" />
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/ModoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modo de juego:" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20px" />
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/Modo1Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Un jugador:" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El juego consta de 5 botones o &quot;cuencos&quot;. Al pulsar uno de ellos, las fichas se irán distribuyendo una a una en los cuencos adyacentes hacia la derecha, incluida la &quot;ruma&quot;." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Las piedras acumuladas en la &quot;ruma&quot; quedarán allí sin posibilidad de ser movidas de ninguna forma, convirtiéndose de este modo en los puntos conseguidos." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Si la última piedra cae en un cuenco vacío, en ese momento el juego se terminará, de otro modo, si el cuenco en el que cae la última piedra ya contaba con una o más antes este se convertirá ahora en el único cuenco utilizable." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Si de otra forma la última piedra cae en la ruma, el jugador podrá determinar que cuenco utilizar en el próximo movimiento." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Al llegar al cuenco mas a la derecha, es decir, a la ruma, si aun quedan puntos por distribuir se empezarán a distribuir de nuevo desde el primer cuenco."/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/Descripcion8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El jugador ganará si, al meter el último punto en la ruma, el resto de cuencos están vacíos (tiene todos los botones vacíos)"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30px" />
+
+            <TextView
+                android:id="@+id/Modo2Text"
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dos jugadores:" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30px" />
+
+            <TextView
+                android:id="@+id/DescripcionModo2Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El juego consta ahora de 10 cuencos, 5 cada persona, y las fichas se van distribuyendo en sentido antihorario" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/DescripcionModo2Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Empieza a jugar un jugador aleatorio, y puede empezar desde cualquier botón de su tablero." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/DescripcionModo2Text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Si el jugador llega a su ruma y sigue teniendo puntos, se distribuirán a los cuencos cuencos del contrincante, con la excepción de que no se introducen en la ruma contraria" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/DescripcionModo2Text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ahora, si el jugador acaba en un cuenco vacío de su tablero, cambian las normas: Si el enemigo tiene en su posición contraria (excluyendo las rumas) alguna ficha, se pasan directamente a la ruma del jugador actual." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/DescripcionModo2Text5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Los cambios de turno se realizarán en cuanto el jugador acaba en un cuenco del rival, esté o no vacío. El rival podrá empezar su turno desde cualquier cuenco que no esté vacío" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+
+            <TextView
+                android:id="@+id/DescripcionModo2Text6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El juego termina en cuanto una de las dos filas se queda sin fichas, pero eso no significa que gane el jugador que acabe. Ganará el jugador que, cuando acabe la partida, tenga más puntos en su ruma" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
