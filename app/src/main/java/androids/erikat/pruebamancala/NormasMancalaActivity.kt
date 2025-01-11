@@ -21,7 +21,8 @@ class NormasMancalaActivity : AppCompatActivity() {
         val btnVolver = mibiding.imageBtnVolver
 
         btnVolver.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            var intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

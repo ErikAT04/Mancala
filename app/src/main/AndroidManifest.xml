@@ -13,15 +13,7 @@
         android:theme="@style/Theme.PruebaMancala"
         tools:targetApi="31">
         <activity
-            android:name=".NormasMancalaActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".CrearJugadoresActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,14 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TwoPlayerGameView"
-            android:screenOrientation="portrait"
-            android:exported="false"/>
-        <activity
-            android:name=".OnePlayerGameView"
-            android:screenOrientation="portrait"
-            android:exported="false"/>
     </application>
 
 </manifest>

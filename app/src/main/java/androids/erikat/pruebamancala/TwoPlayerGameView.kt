@@ -1,6 +1,7 @@
 package androids.erikat.pruebamancala
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -46,7 +47,7 @@ class TwoPlayerGameView : AppCompatActivity() {
     /**Función de activación de botones -> Activa todos los botones de un jugador siempre y cuando tengan más de una ficha*/
     private fun activarBotones() {
         for (boton in listaBotones[jugadorActual].subList(0, 4)) {
-            boton.isEnabled = boton.text.toString().toInt() > 1
+            boton.isEnabled = boton.text.toString().toInt() >= 1
         }
     }
 
@@ -100,11 +101,11 @@ class TwoPlayerGameView : AppCompatActivity() {
         val cuentaRuma1: Int = listaBotones[0][4].text.toString().toInt()
         val cuentaRuma2: Int = listaBotones[1][4].text.toString().toInt()
         if (cuentaRuma1 > cuentaRuma2) {
-            Toast.makeText(this, "¡Ha ganado ${p1}!", Toast.LENGTH_SHORT).show()
+            mostrarDialogoVictoria(p1, p2)
         } else if (cuentaRuma1 < cuentaRuma2) {
-            Toast.makeText(this, "¡Ha ganado ${p2}!", Toast.LENGTH_SHORT).show()
+            mostrarDialogoVictoria(p2, p1)
         } else {
-            Toast.makeText(this, "¡Ha habido un empate!", Toast.LENGTH_SHORT).show()
+            mostrarDialogoEmpate(p1,p2)
         }
     }
 
@@ -194,6 +195,8 @@ class TwoPlayerGameView : AppCompatActivity() {
                 sublista[indice].text = ((2..4).random().toString())
             }
         }
+        viewBinding.rumap1.text = "0"
+        viewBinding.rumap2.text = "0"
         cambiarJugador()
     }
 
@@ -222,5 +225,60 @@ class TwoPlayerGameView : AppCompatActivity() {
 
         viewBinding.p1Name.text = p1
         viewBinding.p2Name.text = p2
+    }
+
+    fun mostrarDialogoVictoria(jugadorgana: String, jugadorpierde: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("$jugadorgana ha ganado!!")
+            .setMessage("¿Qué deseas hacer?")
+            .setPositiveButton("Salir") { dialog, _ ->
+                finish()
+            }
+            .setNeutralButton("Volver a jugar") { dialog, _ ->
+                iniciarJuego()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Enviar a un amigo") { dialog, _ ->
+                val mensajeVictoria = "$jugadorgana ha ganado a $jugadorpierde al Mancala. ¿Quieres retar a tus amigos? (Mejor enganchate al LoL)"
+                enviarMensajeTexto(mensajeVictoria)
+                dialog.dismiss()
+            }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+
+    fun mostrarDialogoEmpate(jugadorgana: String, jugadorpierde: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("EMPATE")
+            .setMessage("¿Qué deseas hacer?")
+            .setPositiveButton("Salir") { dialog, _ ->
+                finish()
+            }
+            .setNeutralButton("Volver a jugar") { dialog, _ ->
+                iniciarJuego()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Enviar a un amigo") { dialog, _ ->
+                val mensajeVictoria = "¡¡$jugadorgana y $jugadorpierde han intentado competir al Mancala y han empatado!! ¿Crees que puedes ganar a tus amigos? (coña, no tienes amigos)"
+                enviarMensajeTexto(mensajeVictoria)
+                dialog.dismiss()
+            }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    fun enviarMensajeTexto(mensaje: String) {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, mensaje)
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(Intent.createChooser(intent, "Compartir mensaje con"))
+        } else {
+            Toast.makeText(this, "No hay aplicaciones disponibles para enviar el mensaje.", Toast.LENGTH_SHORT).show()
+        }
     }
 }

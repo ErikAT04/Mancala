@@ -1,7 +1,9 @@
 package androids.erikat.pruebamancala
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androids.erikat.pruebamancala.databinding.ActivityOnePlayerGameBinding
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -87,7 +89,7 @@ class OnePlayerGameView : AppCompatActivity() {
             for (boton in listabotones){
                 boton.isEnabled = false
             }
-            AlertDialog.Builder(this).setMessage("¡Perdiste!").show()
+            mostrarDialogoPerdida()
         } else if (num == 4) { //Si el numero es 4, se desbloquean todos los botones distintos a 0
             for (boton in listabotones.subList(0, 4)){
                 boton.isEnabled = boton.text.toString().toInt() != 0
@@ -108,7 +110,61 @@ class OnePlayerGameView : AppCompatActivity() {
             sumaBtts += listabotones[indice].text.toString().toInt()
         }
         if(sumaBtts==0){
-            AlertDialog.Builder(this).setMessage("¡Ganaste!").show()
+            mostrarDialogoVictoria()
+        }
+    }
+
+    fun mostrarDialogoPerdida() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("PERDISTE")
+            .setMessage("¿Qué deseas hacer?")
+            .setPositiveButton("Salir") { dialog, _ ->
+                finish()
+            }
+            .setNeutralButton("Volver a jugar") { dialog, _ ->
+                iniciarComponentes()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Enviar a un amigo") { dialog, _ ->
+                val mensajeVictoria = "No consigo ganar en este juego!! Se llama Mancala y lo puedes probar si quieres gritar"
+                enviarMensajeTexto(mensajeVictoria)
+                dialog.dismiss()
+            }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    fun mostrarDialogoVictoria() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("GANASTE")
+            .setMessage("¿Qué deseas hacer?")
+            .setPositiveButton("Salir") { dialog, _ ->
+                finish()
+            }
+            .setNeutralButton("Volver a jugar") { dialog, _ ->
+                iniciarComponentes()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Enviar a un amigo") { dialog, _ ->
+                val mensajeVictoria = "He conseguido ganar al Mancala!! Ahora prueba tú (no lo hagas)"
+                enviarMensajeTexto(mensajeVictoria)
+                dialog.dismiss()
+            }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    fun enviarMensajeTexto(mensaje: String) {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, mensaje)
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(Intent.createChooser(intent, "Compartir mensaje con"))
+        } else {
+            Toast.makeText(this, "No hay aplicaciones disponibles para enviar el mensaje.", Toast.LENGTH_SHORT).show()
         }
     }
 }
